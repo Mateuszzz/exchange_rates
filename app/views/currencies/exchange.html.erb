@@ -1,0 +1,28 @@
+<h1>Current exchange rates</h1>
+
+<div class="currency">
+<table class="table">
+      
+  <thead>     
+    <tr>
+      <th>Currency name</th>
+      <th>Currency code</th>
+      <th>Conversion rate </th>
+      <th>Average exchange rate</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    
+  <% @exchange_rates.each do |currency| %>
+    <tr>
+      <th><%= currency.css('nazwa_waluty').text %></th>
+      <td><%= currency.css('kod_waluty').text %></td>
+      <td><%= currency.css('przelicznik').text %></td>
+      <td><%= currency.css('kurs_sredni').text %></td>
+  <% end %>
+
+  </tbody>
+
+</table>
+</div>

@@ -1,0 +1,18 @@
+<header>
+  <nav class="navbar navbar-default">
+    <div class="navbar-fluid">
+      
+      <div class="navbar-header">
+        <%= link_to "X-Rates", root_path, class: "navbar-brand"  %>
+      </div>
+      
+      <div id="navbar" class="navbar-collapse collapse">   
+        <ul class="nav navbar-nav">
+          <li><%= link_to "Current", currencies_exchange_path %></li>
+          <li><%= link_to "Archival", currencies_archival_exchange_path %></li>
+        </ul>
+      </div>
+      
+    </div>
+  </nav>
+</header>

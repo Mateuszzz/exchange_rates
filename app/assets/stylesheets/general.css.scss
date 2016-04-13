@@ -1,0 +1,130 @@
+/* mixin */
+@mixin margin($left: 25px, $top: 0px, $right: 25px, $bootom: 0px) {
+    margin-left: $left;
+    margin-right: $right;
+    margin-top: $top;
+    margin-bootom: $bootom;
+}
+
+@mixin center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+/* header */
+header{
+    @include margin;
+    
+    /* navbar */
+    .navbar-fluid{
+        @include margin;
+    }
+}
+
+/* content */
+.content{
+    
+    @include margin(25px, 50px, 25px, 0px);
+    
+    .center{
+       @include center; 
+    }
+    
+    h1, .welcome{
+        margin-top: 50px;
+        margin-bottom: 25px;
+        text-align: center;
+    }
+    
+    h2{
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    
+    .line{
+        hr {
+            color: gray;
+            background: gray;
+            height: 2px;
+        }
+    }
+    
+    .currency{
+        max-width: 60%;
+        margin: 0 auto;
+        margin-top: 45px;
+        
+        td{
+            text-align: center;
+        }
+    }
+    
+    .welcome{
+        margin-top: 15px;
+    }
+    
+    
+    /* forms */ 
+    .search {
+        margin: 0 auto;
+        padding: 10px 0;
+        width: 250px;
+        height: 30px;
+        position: relative;
+    
+        input:not([type='submit']) {
+            position: absolute;
+            float: Left;
+            margin-left: 0px;    
+        }   
+     
+        input[type='submit']{
+            height: 30px;
+            position: absolute;
+            right: 0;
+            top: 10px;
+        } 
+    }
+      
+    .fighter-form{
+        width: 300px;
+        position: absolute;
+        left: 50%;
+        @include margin(-150px, 0px, 0px, 10px);
+    }
+    
+    .skill-form{
+        width: 500px;
+        position: absolute;
+        left: 50%;
+        @include margin(-250px, 0px, 0px, 10px);
+    }
+    
+    .form-inputs{
+        
+        input, textarea, select{
+            width: 100% ;
+            margin-bottom: 10px;
+        }
+        
+        label{
+            float: left;
+        }
+    }
+    
+    .form-action{
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    /* home page */
+    .home{
+        font-size: 22px;
+        text-align: center;
+        .title{
+            font-size: 45px;
+        }
+    }
+}
