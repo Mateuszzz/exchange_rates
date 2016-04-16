@@ -1,15 +1,7 @@
 class CurrenciesController < ApplicationController
+  before_action :set_up_exchange_rates, :only => [:exchange, :converter]
   
   def exchange
-    @doc = Currency.new(Date.today.to_s)
-    
-    if @doc.error?
-        flash[:danger] = "There is some technical problem. Please try again later."
-        redirect_to root_path
-    
-    else
-      @exchange_rates = @doc.get_elements('pozycja')
-    end
   end
   
   def archival_exchange
@@ -28,4 +20,21 @@ class CurrenciesController < ApplicationController
        
     end
   end
+  
+  def converter
+  end
+  
+  private
+  
+    def set_up_exchange_rates
+      @doc = Currency.new(Date.today.to_s)
+    
+      if @doc.error?
+          flash[:danger] = "There is some technical problem. Please try again later."
+          redirect_to root_path
+    
+      else
+        @exchange_rates = @doc.get_elements('pozycja')
+      end
+    end
 end

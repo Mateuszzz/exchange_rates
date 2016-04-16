@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Currency, :type => :model do
   
-  describe "Instance methods" do  
+  describe "Instance methods" do
+    
     it "get elements" do
       doc = Currency.new(Date.today.to_s) 
       elements = doc.get_elements('pozycja')
@@ -12,6 +13,7 @@ RSpec.describe Currency, :type => :model do
   end
   
   describe "Validations" do
+    
     it "is valid with correct data" do
       doc = Currency.new(Date.today.to_s)
       expect(doc.error?).to be_equal(false)

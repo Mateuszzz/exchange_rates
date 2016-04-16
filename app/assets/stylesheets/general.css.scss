@@ -65,8 +65,33 @@ header{
         margin-top: 15px;
     }
     
+    .result {
+        background-color: #337ab7;
+        color: white;
+        font-size: 15px;
+        text-align: center;
+        
+        .title {
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        
+        .content {
+            
+        }
+    }
     
-    /* forms */ 
+    /* forms */
+    
+    .text {
+        text-align: center;
+    }
+    
+    .convert-form {
+        margin-top: 30px;
+        margin-bottom: 25px;
+    }
+    
     .search {
         margin: 0 auto;
         padding: 10px 0;

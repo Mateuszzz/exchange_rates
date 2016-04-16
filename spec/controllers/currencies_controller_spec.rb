@@ -45,5 +45,19 @@ RSpec.describe CurrenciesController, :type => :controller do
         expect(response).to render_template("archival_exchange")
       end
     end
-  end  
+  end
+  
+  describe "GET #converter" do
+    before do
+      get :converter
+    end
+    
+    it "returns http success" do
+      expect(response).to be_success
+    end
+    
+    it "renders the home template" do
+      expect(response).to render_template("converter")
+    end
+  end
 end

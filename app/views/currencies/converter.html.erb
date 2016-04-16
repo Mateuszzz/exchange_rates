@@ -1,0 +1,25 @@
+<div class="center">
+
+  <h1>Currency Converter</h1>
+
+  <div class="convert-form">  
+    <div class="form-inputs">
+    
+      <div class="text">Amount:</div>
+      <%= text_field_tag "amount", "100", maxlength: 10 ,class: "form-control" , placeholder: "Amount" %>
+   
+      <div class="text">Convert from:</div>
+      <%= render 'shared/select_currencies', locals: {id: "current_currency"} %>
+    
+      <div class="text">Convert to:</div>
+      <%= render 'shared/select_currencies', locals: {id: "target_currency"} %>
+  
+      <div class="form-action">
+        <button type="button" class="btn btn-primary" id="calculate">Calculate</button>
+      </div>
+   
+    </div>
+  </div>  
+  
+  <div class="result"></div>
+</div>

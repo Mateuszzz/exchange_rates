@@ -1,0 +1,1 @@
+<%= select_tag locals[:id], options_for_select([["złotówka", "1", id: "1", class: "PLN"]]+ @exchange_rates.collect{ |u| [u.css('nazwa_waluty').text, u.css('kurs_sredni').text, id: u.css('przelicznik').text, class: u.css('kod_waluty').text] }), class: "form-control" %>    
