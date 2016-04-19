@@ -9,7 +9,7 @@ describe "User downalods PDF" do
     
     expect(page.status_code).to equal(200)
     expect(page.response_headers['Content-Type']).to eq("application/pdf")
-    expect(page.response_headers['Content-Disposition']).to match(/attachment; filename="exchange_rates_#{Date.today}.pdf"/)  
+    expect(page.response_headers['Content-Disposition']).to eq("attachment; filename=\"exchange_rates_#{Date.today}.pdf\"")  
     expect(pdf.strings).to be_include("Exchange rates of #{Date.today}") 
   end
 end  

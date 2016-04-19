@@ -24,7 +24,6 @@ class CurrenciesController < ApplicationController
       else
         @exchange_rates = @doc.get_elements('pozycja')
       end
-   
     end
     
     respond_to do |format|
@@ -47,15 +46,15 @@ class CurrenciesController < ApplicationController
   
   private
   
-    def set_up_exchange_rates
-      @doc = Currency.new(Date.today.to_s)
+  def set_up_exchange_rates
+    @doc = Currency.new(Date.today.to_s)
     
-      if @doc.error?
-          flash[:danger] = "There is some technical problem. Please try again later."
-          redirect_to root_path
+    if @doc.error?
+        flash[:danger] = "There is some technical problem. Please try again later."
+        redirect_to root_path
     
-      else
-        @exchange_rates = @doc.get_elements('pozycja')
-      end
+    else
+      @exchange_rates = @doc.get_elements('pozycja')
     end
+  end
 end

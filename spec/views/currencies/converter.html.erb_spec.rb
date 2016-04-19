@@ -11,8 +11,8 @@ RSpec.describe "currencies/converter.html.erb", :type => :view do
   end  
     
   it 'renders _select_currencies partial' do
-      expect(view).to render_template(:partial => "_select_currencies")
-    end  
+    expect(view).to render_template(:partial => "_select_currencies")
+  end  
     
   it 'displays a form to convert currencies' do
     expect(rendered).to have_tag('.convert-form') do

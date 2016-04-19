@@ -48,6 +48,7 @@ class Currency
 	  data = Nokogiri::XML(open(url))
 	rescue
 	  @error = true
+	  return
     end
 			
 	data

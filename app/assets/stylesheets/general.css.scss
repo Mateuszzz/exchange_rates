@@ -119,20 +119,6 @@ header{
         } 
     }
       
-    .fighter-form{
-        width: 300px;
-        position: absolute;
-        left: 50%;
-        @include margin(-150px, 0px, 0px, 10px);
-    }
-    
-    .skill-form{
-        width: 500px;
-        position: absolute;
-        left: 50%;
-        @include margin(-250px, 0px, 0px, 10px);
-    }
-    
     .form-inputs{
         
         input, textarea, select{

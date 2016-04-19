@@ -11,7 +11,7 @@ RSpec.describe "currencies/exchange.html.erb", :type => :view do
   end
   
   it 'renders _exchange_rates partial' do
-      expect(view).to render_template(:partial => "_exchange_rates")
+    expect(view).to render_template(:partial => "_exchange_rates")
   end
   
   it 'displays a link to save exchange rates as PDF' do

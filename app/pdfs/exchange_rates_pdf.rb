@@ -1,7 +1,6 @@
 class ExchangeRatesPdf < Prawn::Document
   def initialize(exchange_rates, date)
     super()
-    
     @exchange_rates = exchange_rates
     @date = date
     
