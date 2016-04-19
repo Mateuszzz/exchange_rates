@@ -26,8 +26,16 @@ RSpec.describe "currencies/archival_exchange.html.erb", :type => :view do
       render
     end
   
+    it 'renders _exchange_rates partial' do
+      expect(view).to render_template(:partial => "_exchange_rates")
+    end
+
     it 'displays a selected date' do
       expect(rendered).to have_content("Exchange rates of #{@date}")
+    end
+        
+    it 'displays a link to save exchange rates as PDF' do
+      expect(rendered).to have_link("Save as PDF", :href=>"/currencies/archival_exchange.pdf?search=#{@date}")
     end
   
     it 'displays a currency name' do

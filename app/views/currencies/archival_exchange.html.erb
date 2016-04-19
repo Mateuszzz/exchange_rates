@@ -11,31 +11,13 @@
   
   <h1>Exchange rates of <%= @date %></h1>
 
-  <div class="currency">
-    <table class="table">
-      
-      <thead>     
-        <tr>
-          <th>Currency name</th>
-          <th>Currency code</th>
-          <th>Conversion rate </th>
-          <th>Average exchange rate</th>
-        </tr>
-      </thead>
+  <%= render 'shared/exchange_rates', object: @exchange_rates %>
   
-      <tbody>
+  <div class="download">
     
-        <% @exchange_rates.each do |currency| %>
-          <tr>
-            <th><%= currency.css('nazwa_waluty').text %></th>
-            <td><%= currency.css('kod_waluty').text %></td>
-            <td><%= currency.css('przelicznik').text %></td>
-            <td><%= currency.css('kurs_sredni').text %></td>
-          </tr> 
-        <% end %>
-
-      </tbody>
-    </table>
+    <%= link_to currencies_archival_exchange_path(search: @date, format: "pdf") do %>
+      <button class="btn btn-danger">Save as PDF</button>
+    <% end %>
+    
   </div>
-  
 <% end %>

@@ -2,6 +2,13 @@ class CurrenciesController < ApplicationController
   before_action :set_up_exchange_rates, :only => [:exchange, :converter]
   
   def exchange
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = ExchangeRatesPdf.new(@exchange_rates, Date.today)
+        send_data pdf.render, filename: "exchange_rates_#{Date.today}.pdf", type: "application/pdf"
+      end
+    end
   end
   
   def archival_exchange
@@ -17,7 +24,21 @@ class CurrenciesController < ApplicationController
       else
         @exchange_rates = @doc.get_elements('pozycja')
       end
-       
+   
+    end
+    
+    respond_to do |format|
+      format.html
+      format.pdf do
+        
+        if params[:search].present?   
+          pdf = ExchangeRatesPdf.new(@exchange_rates, @date)
+          send_data pdf.render, filename: "exchange_rates_#{@date}.pdf", type: "application/pdf"
+          
+        else
+          redirect_to currencies_archival_exchange_path
+        end
+      end
     end
   end
   

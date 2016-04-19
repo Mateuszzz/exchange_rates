@@ -1,0 +1,27 @@
+<div class="currency">
+  <table class="table">
+      
+    <thead>     
+      <tr>
+        <th>Currency name</th>
+        <th>Currency code</th>
+        <th>Conversion rate </th>
+        <th>Average exchange rate</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+    
+      <% object.each do |currency| %>
+        <tr>
+          <th><%= currency.css('nazwa_waluty').text %></th>
+          <td><%= currency.css('kod_waluty').text %></td>
+          <td><%= currency.css('przelicznik').text %></td>
+          <td><%= currency.css('kurs_sredni').text %></td>
+        </tr> 
+      <% end %>
+
+    </tbody>
+      
+  </table>
+</div>

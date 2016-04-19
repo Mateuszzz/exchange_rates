@@ -39,6 +39,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 #Use bootstrap in appliaction
 gem 'bootstrap-sass', '~> 3.3.5'
 
+# Use prawn to generate pdf file
+gem 'prawn', '~> 1.3'
+gem 'prawn-table'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
@@ -47,6 +51,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'rspec-html-matchers'
   gem 'capybara'
+  gem 'pdf-inspector'
   gem "factory_girl_rails"
   gem "faker"
 end
